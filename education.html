@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EDUCATION | SYAF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="overlay">
+  <header>
+    <h1>TENGKU NUR SYAFIYAH ANIS</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="biodata.html">Biodata</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="family.html">Family</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <div class="container">
+<h2 class="section-title slide-title">MY EDUCATION</h2>
+
+<!-- UiTM SEGAMAT -->
+<section class="education-section">
+<h3 class="edu-title">
+  <a href="https://johor.uitm.edu.my/" target="_blank">
+    Universiti Teknologi MARA (UiTM) Cawangan Johor – Kampus Segamat
+  </a>
+</h3>
+
+  <img src="images/logoUiTM.png" class="school-logo" alt="UiTM Logo">
+
+  <p><strong>Level of Study:</strong> Diploma</p>
+  <p><strong>Course:</strong> Information Management</p>
+
+  <table>
+    <tr><th>Semester</th><th>Pointer</th></tr>
+    <tr><td>Semester 1</td><td>3.91</td></tr>
+    <tr><td>Semester 2</td><td>3.53</td></tr>
+    <tr><td>Semester 3</td><td>3.37</td></tr>
+    <tr><td>Semester 4</td><td>3.50</td></tr>
+    <tr><td><strong>Total CGPA</strong></td><td><strong>3.57</strong></td></tr>
+  </table>
+
+  <div class="edu-media">
+    <img src="images/uitm.jpg" alt="UiTM Segamat" class="school-photo">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.0573508475613!2d102.72672767381299!3d2.4879697568635315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ce2c6ce929a871%3A0xc0dfa5fe6922a589!2sUiTM%20Cawangan%20Johor%2C%20Kampus%20Segamat!5e0!3m2!1sen!2ssg!4v1766182824991!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+  </div>
+</section>
+
+    <!-- MRSM JB -->
+     <section class="education-section">
+<h3 class="edu-title">
+  <a href="http://jbahru.mrsm.edu.my" target="_blank">
+    Maktab Rendah Sains MARA Johor Bahru (MRSM JB)
+  </a>
+</h3>
+
+  <img src="images/logomrsm.jpg" class="school-logo" alt="MRSM Logo">
+  <p><strong>Examination:</strong> SPM</p>
+  <p><strong>Stream:</strong> Accounting</p>
+
+  <table>
+    <tr><th>Subject</th><th>Result</th></tr>
+    <tr><td>Bahasa Melayu</td><td>A+</td></tr>
+    <tr><td>Bahasa Inggeris</td><td>A</td></tr>
+    <tr><td>Mathematics</td><td>A</td></tr>
+    <tr><td>Additional Mathematics</td><td>C+</td></tr>
+    <tr><td>Principles of Accounting</td><td>A</td></tr>
+    <tr><td>Physics</td><td>A-</td></tr>
+    <tr><td>Chemistry</td><td>B</td></tr>
+    <tr><td>History</td><td>A</td></tr>
+    <tr><td>Islamic Education</td><td>A</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>7A 1B 1C</strong></td></tr>
+  </table>
+
+  <div class="edu-media">
+    <img src="images/mrsm.png" alt="MRSM JB" class="school-photo">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4151079576704!2d103.88885077381369!3d1.5196217610090357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da6afeb15abd81%3A0x593ce3657c02352e!2sMARA%20Junior%20Science%20College%20Johor%20Bahru!5e0!3m2!1sen!2ssg!4v1766198462188!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</section>
+
+<section class="education-section">
+    <h3>Achievements</h3>
+
+<div class="achievement-slideshow">
+  <img src="images/sijil1.jpg" class="achievement-img" onclick="openPopup(0)">
+  <img src="images/sijil2.jpg" class="achievement-img" onclick="openPopup(1)">
+  <img src="images/sijil3.jpg" class="achievement-img" onclick="openPopup(2)">
+  <img src="images/sijil4.jpg" class="achievement-img" onclick="openPopup(3)">
+  <img src="images/sijil5.jpg" class="achievement-img" onclick="openPopup(4)">
+  <img src="images/sijil6.jpg" class="achievement-img" onclick="openPopup(5)">
+  <img src="images/sijil7.jpg" class="achievement-img" onclick="openPopup(6)">
+  <img src="images/sijil8.jpg" class="achievement-img" onclick="openPopup(7)">
+</div>
+
+</section>
+
+
+<footer>
+  © 2025 — Tengku Nur Syafiyah Anis. All rights reserved.
+</footer>
+
+</div>
+
+<button id="scrollUpBtn">⬆</button>
+<script>
+  const scrollBtn = document.getElementById("scrollUpBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+<div class="img-popup" id="popup">
+  <span class="close-popup" onclick="closePopup()">&times;</span>
+
+  <button class="popup-btn left" onclick="changePopup(-1)">&#10094;</button>
+
+  <img id="popupImg" class="img-popup-content">
+
+  <button class="popup-btn right" onclick="changePopup(1)">&#10095;</button>
+</div>
+
+<script>
+  const images = [
+    "images/sijil1.jpg",
+    "images/sijil2.jpg",
+    "images/sijil3.jpg",
+    "images/sijil4.jpg",
+    "images/sijil5.jpg",
+    "images/sijil6.jpg",
+    "images/sijil7.jpg",
+    "images/sijil8.jpg"
+  ];
+
+  let currentIndex = 0;
+
+  function openPopup(index) {
+    currentIndex = index;
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("popupImg").src = images[currentIndex];
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  function changePopup(n) {
+    currentIndex += n;
+
+    if (currentIndex >= images.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = images.length - 1;
+
+    document.getElementById("popupImg").src = images[currentIndex];
+  }
+</script>
+
+</body>
+</html>

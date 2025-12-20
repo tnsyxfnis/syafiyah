@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GALLERY | SYAF</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="overlay">
+  <header>
+    <h1>TENGKU NUR SYAFIYAH ANIS</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h2 class="section-title">MY GALLERY</h2>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" role="tablist" aria-label="Gallery filters">
+      <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="family">Family</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="friends">Friends</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="myself">Myself</button>
+    </div>
+
+    <!-- Gallery Grid (use your photos/ folder) -->
+    <div class="gallery" id="galleryGrid">
+      <!-- FAMILY -->
+      <img src="photos/family1.jpg" alt="Family" data-category="family">
+      <img src="photos/family2.jpg" alt="Family" data-category="family">
+      <img src="photos/family3.jpg" alt="Family" data-category="family">
+      <img src="photos/family4.jpg" alt="Family" data-category="family">
+
+      <!-- FRIENDS -->
+      <img src="photos/friends1.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends2.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends3.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends4.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends5.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends6.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends7.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends8.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends9.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends10.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends11.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends12.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends13.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends14.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends15.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends16.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends17.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends18.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends19.jpg" alt="Friends" data-category="friends">    
+      <img src="photos/friends20.jpg" alt="Friends" data-category="friends">  
+      <img src="photos/friends21.jpg" alt="Friends" data-category="friends">  
+      <img src="photos/friends22.jpg" alt="Friends" data-category="friends">  
+      <img src="photos/friends23.jpg" alt="Friends" data-category="friends">
+      <img src="photos/friends24.jpg" alt="Friends" data-category="friends">  
+      <img src="photos/friends25.jpg" alt="Friends" data-category="friends">  
+      <img src="photos/friends26.jpg" alt="Friends" data-category="friends">  
+      <img src="photos/friends27.jpg" alt="Friends" data-category="friends">  
+      <img src="photos/friends28.jpg" alt="Friends" data-category="friends">  
+      <img src="photos/friends29.jpg" alt="Friends" data-category="friends">  
+      <img src="photos/friends30.jpg" alt="Friends" data-category="friends">    
+
+      <!-- MYSELF -->
+      <img src="photos/me1.jpg" alt="Myself" data-category="myself">
+      <img src="photos/me2.jpg" alt="Myself" data-category="myself">
+      <img src="photos/me3.jpg" alt="Myself" data-category="myself">
+      <img src="photos/me5.jpg" alt="Myself" data-category="myself">
+      <img src="photos/me6.jpg" alt="Myself" data-category="myself">  
+      <img src="photos/me7.jpg" alt="Myself" data-category="myself">
+      <img src="photos/me8.jpg" alt="Myself" data-category="myself">
+      <img src="photos/me9.jpg" alt="Myself" data-category="myself">
+      <img src="photos/me10.jpg" alt="Myself" data-category="myself">
+      <img src="photos/me11.jpg" alt="Myself" data-category="myself">
+
+    </div>
+  </div>
+
+<!-- Filtering Script -->
+<script>
+  (function(){
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('#galleryGrid img');
+
+    function applyFilter(filter){
+      items.forEach(img => {
+        const cat = (img.getAttribute('data-category') || '').toLowerCase();
+        const show = (filter === 'all') || (cat === filter);
+        img.style.display = show ? 'block' : 'none';
+      });
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        applyFilter(btn.getAttribute('data-filter'));
+      });
+    });
+
+    // Initial view: show all
+    applyFilter('all');
+  })();
+</script>
+
+<!-- ===== Image Popup Modal ===== -->
+<div class="img-popup" id="imgPopup">
+  <span class="close-popup" id="closePopup">&times;</span>
+
+  <button class="popup-btn left" id="prevBtn">&#10094;</button>
+  <img class="img-popup-content" id="popupImg">
+  <button class="popup-btn right" id="nextBtn">&#10095;</button>
+</div>
+
+<script>
+  const popup = document.getElementById("imgPopup");
+  const popupImg = document.getElementById("popupImg");
+  const closeBtn = document.getElementById("closePopup");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  const images = document.querySelectorAll("#galleryGrid img");
+  let currentIndex = 0;
+
+  // Open popup
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      popup.style.display = "block";
+      popupImg.src = img.src;
+      currentIndex = index;
+    });
+  });
+
+  // Close popup
+  closeBtn.onclick = () => {
+    popup.style.display = "none";
+  };
+
+  // Click outside image closes popup
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+
+  // Next image
+  nextBtn.onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    popupImg.src = images[currentIndex].src;
+  };
+
+  // Previous image
+  prevBtn.onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    popupImg.src = images[currentIndex].src;
+  };
+
+  // Keyboard support
+  document.addEventListener("keydown", (e) => {
+    if (popup.style.display === "block") {
+      if (e.key === "ArrowRight") nextBtn.click();
+      if (e.key === "ArrowLeft") prevBtn.click();
+      if (e.key === "Escape") popup.style.display = "none";
+    }
+  });
+</script>
+
+<footer>
+  © 2025 — Tengku Nur Syafiyah Anis. All rights reserved.
+</footer>
+
+<button id="scrollUpBtn">⬆</button>
+
+<script>
+  const scrollBtn = document.getElementById("scrollUpBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+</body>
+</html>

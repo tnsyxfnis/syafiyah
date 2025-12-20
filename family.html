@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family | Syafiyah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="overlay">
+
+  <!-- ================= NAVBAR ================= -->
+  <header>
+    <h1 class="logo">TENGKU NUR SYAFIYAH ANIS</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="biodata.html">Biodata</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="family.html" aria-current="page">Family</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <!-- ================= TITLE ================= -->
+  <h2 class="section-title slide-title">MY FAMILY</h2>
+
+  <!-- ================= FAMILY SECTION ================= -->
+  <section class="section family-section">
+
+    <!-- Family Image Card -->
+    <div class="family-card">
+      <img 
+        src="images/family1.jpg" 
+        alt="Family Photo" 
+        class="family-photo"
+      >
+      <p class="family-caption">
+        A precious moment with my beloved family 🤍
+      </p>
+    </div>
+
+    <!-- Family List -->
+    <div class="family-list">
+
+      <ul style="list-style: disc; margin-left: 24px; font-size:17px; line-height:1.8;">
+        <li>
+          <strong>Father</strong> — Tengku Shah Isrul Bin Tengku Adnin
+        </li>
+        <li>
+          <strong>Mother</strong> — Suraya Bte Abdullah
+        </li>
+        <li>
+          <strong>Me</strong> — Tengku Nur Syafiyah Anis Binti Tengku Shah Isrul
+        </li>
+        <li>
+          <strong>Younger Sister</strong> — Tengku Nur Syakirah Alya  
+          Binti Tengku Shah Isrul
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <footer>
+  © 2025 — Tengku Nur Syafiyah Anis. All rights reserved.
+</footer>
+
+<button id="scrollUpBtn">⬆</button>
+
+<script>
+  const scrollBtn = document.getElementById("scrollUpBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+</body>
+
+</html>
